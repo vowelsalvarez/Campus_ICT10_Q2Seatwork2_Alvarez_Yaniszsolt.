@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GWA Calculator</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .name-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .name-box {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            background-color: #7a0c0c;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .grades-title {
+            color: #7a0c0c;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 30px 0 20px 0;
+        }
+
+        .grades-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .grade-box {
+            flex: 1;
+        }
+
+        .calculate-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #7a0c0c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .calculate-button:hover {
+            background-color: #5a0808;
+        }
+
+        #student_info {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .result-box {
+            background-color: #f9f9f9;
+            border-left: 5px solid #7a0c0c;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .result-name {
+            color: #7a0c0c;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        #summary {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .grade-line {
+            margin: 8px 0;
+            color: #333;
+        }
+
+        #output {
+            background-color: #fff9e6;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .gwa-number {
+            color: #7a0c0c;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center; color: #333;">GWA Calculator</h2>
+
+        <div class="name-row">
+            <div class="name-box">
+                <label>First Name</label>
+                <input type="text" id="firstName" placeholder="Yaniszsolt">
+            </div>
+            <div class="name-box">
+                <label>Last Name</label>
+                <input type="text" id="lastName" placeholder="Alvarez">
+            </div>
+        </div>
+
+        <div class="grades-title">Enter your grades:</div>
+
+        <div class="grades-row">
+            <div class="grade-box">
+                <label>Science</label>
+                <input type="number" id="science" placeholder="91">
+            </div>
+            <div class="grade-box">
+                <label>Math</label>
+                <input type="number" id="math" placeholder="90">
+            </div>
+        </div>
+
+        <div class="grades-row">
+            <div class="grade-box">
+                <label>English</label>
+                <input type="number" id="english" placeholder="86">
+            </div>
+            <div class="grade-box">
+                <label>Filipino</label>
+                <input type="number" id="filipino" placeholder="88">
+            </div>
+        </div>
+
+        <div class="grades-row">
+            <div class="grade-box">
+                <label>ICT</label>
+                <input type="number" id="ict" placeholder="98">
+            </div>
+            <div class="grade-box">
+                <label>PE</label>
+                <input type="number" id="pe" placeholder="95">
+            </div>
+        </div>
+
+        <button class="calculate-button" py-click="general_weighted_average">Calculate GWA</button>
+
+        <div id="student_info">
+            <div class="result-box">
+                <div class="result-name" id="student_info_text"></div>
+                
+                <div id="summary"></div>
+
+                <div id="output"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="py" src="main.py"></script>
+</body>
+</html>
